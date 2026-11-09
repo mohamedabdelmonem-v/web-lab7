@@ -14,3 +14,6 @@ const ProductDetail = () => {
     (signal) => fetchProduct(id, signal),
     [id]
   );
+
+  if (loading) return <p>Loading product details...</p>;
+  if (error) return <p style={{ color: 'red' }}>Product Not Found (ID: {id})</p>;
