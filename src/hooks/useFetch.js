@@ -16,3 +16,17 @@ function fetchReducer(state, action) {
 
 export function useFetch(fetchFn, dependencies = []) {
   const [state, dispatch] = useReducer(fetchReducer, initialState);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    dispatch({ type: 'FETCH_START' });
+
+    fetchFn(controller.signal)
+      .then((data) => {
+        dispatch({ type: 'FETCH_SUCCESS', payload: data });
+      })
+      .catch((err) => {
+        if (err.name !== 'AbortError') {
+          dispatch({ type: 'FETCH_ERROR', payload: err.message });
+        }
+      });
