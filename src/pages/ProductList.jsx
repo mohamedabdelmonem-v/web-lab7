@@ -13,3 +13,10 @@ const ProductList = () => {
   const categories = products 
     ? Array.from(new Set(products.map((p) => p.category))) 
     : [];
+
+    // Derived State (Calculated on the fly during render)
+  const filteredProducts = (products || []).filter((product) => {
+    const matchesCategory = categoryFilter ? product.category === categoryFilter : true;
+    const matchesSearch = searchQuery ? product.title.toLowerCase().includes(searchQuery.toLowerCase()) : true;
+    return matchesCategory && matchesSearch;
+  });
