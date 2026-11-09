@@ -11,3 +11,6 @@ const getInitialCart = () => {
 
 export const useCartStore = create((set) => ({
   items: getInitialCart(),
+
+  addItem: (product) => set((state) => {
+    const existing = state.items.find((i) => i.id === product.id);
