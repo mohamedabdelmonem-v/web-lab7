@@ -10,3 +10,4 @@ export const fetchProducts = async (signal) => {
 };
 
 export const fetchProduct = async (id, signal) => {
+    const response = await fetch(`https://dummyjson.com/products/${id}`, { signal });
