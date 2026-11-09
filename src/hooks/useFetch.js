@@ -13,3 +13,6 @@ function fetchReducer(state, action) {
       return state;
   }
 }
+
+export function useFetch(fetchFn, dependencies = []) {
+  const [state, dispatch] = useReducer(fetchReducer, initialState);
