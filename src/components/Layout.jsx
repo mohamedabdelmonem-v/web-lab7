@@ -4,4 +4,5 @@ import NavBar from './NavBar';
 
 const Layout = ({ theme, toggleTheme }) => {
     return (
-        <div className={`app-wrapper ${theme}`} style={{ minHeight: '100vh', padding: '10px' }}></div>
+        <div className={`app-wrapper ${theme}`} style={{ minHeight: '100vh', padding: '10px' }}>
+            <NavBar theme={theme} toggleTheme={toggleTheme} />
