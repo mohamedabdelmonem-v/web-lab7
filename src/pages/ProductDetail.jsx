@@ -28,3 +28,7 @@ const ProductDetail = () => {
        <h3>${product.price}</h3>
       <button onClick={() => addItem(product)}>Add to Cart</button>
     </div>
+    );
+};
+
+export default ProductDetail;
