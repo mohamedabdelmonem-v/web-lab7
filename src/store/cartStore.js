@@ -8,3 +8,6 @@ const getInitialCart = () => {
     return [];
   }
 };
+
+export const useCartStore = create((set) => ({
+  items: getInitialCart(),
