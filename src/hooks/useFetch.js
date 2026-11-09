@@ -30,3 +30,9 @@ export function useFetch(fetchFn, dependencies = []) {
           dispatch({ type: 'FETCH_ERROR', payload: err.message });
         }
       });
+
+      return () => controller.abort();
+  }, dependencies);
+
+  return state;
+}
