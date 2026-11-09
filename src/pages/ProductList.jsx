@@ -45,4 +45,21 @@ const ProductList = () => {
   if (error) return <p style={{ color: 'red' }}>Error: {error}</p>;
 
   return (
-    <div></div>
+    <div>
+        <h2>Product Catalogue</h2>
+      
+      {/* Filter Controls */}
+      <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+        <input 
+          type="text" 
+          placeholder="Search by title..." 
+          value={searchQuery} 
+          onChange={handleSearchChange} 
+        />
+        <select value={categoryFilter} onChange={handleCategoryChange}>
+          <option value="">All Categories</option>
+          {categories.map((cat) => (
+            <option key={cat} value={cat}>{cat}</option>
+          ))}
+        </select>
+      </div>
