@@ -20,7 +20,10 @@ const ProductDetail = () => {
 
   return (
     <div>
-<button onClick={() => navigate('/products')}>← Back to Products</button>
-
+    <button onClick={() => navigate('/products')}>← Back to Products</button>
+     <h2>{product.title}</h2>
+      <img src={product.thumbnail} alt={product.title} style={{ width: '250px' }} />
+      <p><strong>Category:</strong> {product.category}</p>
+      <p>{product.description}</p>
 
     </div>
