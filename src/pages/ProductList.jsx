@@ -63,3 +63,7 @@ const ProductList = () => {
           ))}
         </select>
       </div>
+
+      {filteredProducts.length === 0 ? (
+        <p>No products match your filter criteria.</p>
+      ) : (
