@@ -25,5 +25,6 @@ const ProductDetail = () => {
       <img src={product.thumbnail} alt={product.title} style={{ width: '250px' }} />
       <p><strong>Category:</strong> {product.category}</p>
       <p>{product.description}</p>
-
+       <h3>${product.price}</h3>
+      <button onClick={() => addItem(product)}>Add to Cart</button>
     </div>
