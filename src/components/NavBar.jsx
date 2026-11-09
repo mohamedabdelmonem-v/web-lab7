@@ -16,3 +16,7 @@ const NavBar = ({ theme, toggleTheme }) => {
     <NavLink to="/" end className={({ isActive }) => (isActive ? 'active-link' : '')}>Home</NavLink>
       <NavLink to="/products" className={({ isActive }) => (isActive ? 'active-link' : '')}>Products</NavLink>
       <NavLink to="/cart" className={({ isActive }) => (isActive ? 'active-link' : '')}>Cart ({totalCount})</NavLink>
+
+      <button onClick={toggleTheme} style={{ marginLeft: 'auto' }}>
+        {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+      </button>
