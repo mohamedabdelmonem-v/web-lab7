@@ -19,3 +19,14 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     setError('');
+
+    try {
+      const user = await login(username, password);
+      dispatch({ type: 'LOGGED_IN', payload: user });
+      navigate(from, { replace: true });
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
