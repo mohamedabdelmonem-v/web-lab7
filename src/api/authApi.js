@@ -6,3 +6,6 @@ export const login = (username, password) => {
             // Demo account check (Accepts any email or standard demo credentials)
       if (password === 'demo123456' && username.length > 0) {
         resolve({ username });
+        } else {
+        reject(new Error('Invalid credentials. Password must be demo123456'));
+      }
