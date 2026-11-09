@@ -10,3 +10,6 @@ const NavBar = ({ theme, toggleTheme }) => {
   const totalCount = useCartStore((state) => 
     state.items.reduce((sum, item) => sum + item.quantity, 0)
   );
+
+  return (
+    <nav style={{ display: 'flex', gap: '15px', padding: '15px', borderBottom: '1px solid #ccc', alignItems: 'center' }}></nav>
