@@ -12,7 +12,7 @@ const NavBar = ({ theme, toggleTheme }) => {
   );
 
   return (
-    <nav style={{ display: 'flex', gap: '15px', padding: '15px', borderBottom: '1px solid #ccc', alignItems: 'center' }}></nav>
+    <nav style={{ display: 'flex', gap: '15px', padding: '15px', borderBottom: '1px solid #ccc', alignItems: 'center' }}>
     <NavLink to="/" end className={({ isActive }) => (isActive ? 'active-link' : '')}>Home</NavLink>
       <NavLink to="/products" className={({ isActive }) => (isActive ? 'active-link' : '')}>Products</NavLink>
       <NavLink to="/cart" className={({ isActive }) => (isActive ? 'active-link' : '')}>Cart ({totalCount})</NavLink>
@@ -20,3 +20,17 @@ const NavBar = ({ theme, toggleTheme }) => {
       <button onClick={toggleTheme} style={{ marginLeft: 'auto' }}>
         {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
       </button>
+
+      {user ? (
+        <>
+          <span>Welcome, {user.username}</span>
+          <button onClick={() => dispatch({ type: 'LOGGED_OUT' })}>Logout</button>
+        </>
+      ) : (
+        <NavLink to="/login">Login</NavLink>
+      )}
+    </nav>
+  );
+};
+
+export default NavBar;
