@@ -20,3 +20,13 @@ const ProductList = () => {
     const matchesSearch = searchQuery ? product.title.toLowerCase().includes(searchQuery.toLowerCase()) : true;
     return matchesCategory && matchesSearch;
   });
+
+  const handleSearchChange = (e) => {
+    const newParams = new URLSearchParams(searchParams);
+    if (e.target.value) {
+      newParams.set('q', e.target.value);
+    } else {
+      newParams.delete('q');
+    }
+    setSearchParams(newParams);
+  };
