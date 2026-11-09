@@ -67,3 +67,19 @@ const ProductList = () => {
       {filteredProducts.length === 0 ? (
         <p>No products match your filter criteria.</p>
       ) : (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '15px' }}>
+          {filteredProducts.map((p) => (
+            <div key={p.id} style={{ border: '1px solid #ddd', padding: '10px', borderRadius: '5px' }}>
+              <img src={p.thumbnail} alt={p.title} style={{ width: '100%', height: '120px', objectFit: 'cover' }} />
+              <h3>{p.title}</h3>
+              <p>${p.price}</p>
+              <Link to={`/products/${p.id}`}>View Details</Link>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default ProductList;
