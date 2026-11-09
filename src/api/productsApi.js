@@ -5,3 +5,6 @@ export const fetchProducts = async (signal) => {
   if (!response.ok) {
     throw new Error(`Failed to fetch products: ${response.statusText}`);
   }
+  const data = await response.json();
+  return data.products;
+};
