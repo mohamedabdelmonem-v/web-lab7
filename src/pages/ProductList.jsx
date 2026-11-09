@@ -30,3 +30,13 @@ const ProductList = () => {
     }
     setSearchParams(newParams);
   };
+
+  const handleCategoryChange = (e) => {
+    const newParams = new URLSearchParams(searchParams);
+    if (e.target.value) {
+      newParams.set('category', e.target.value);
+    } else {
+      newParams.delete('category');
+    }
+    setSearchParams(newParams);
+  };
