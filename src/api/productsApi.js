@@ -8,3 +8,5 @@ export const fetchProducts = async (signal) => {
   const data = await response.json();
   return data.products;
 };
+
+export const fetchProduct = async (id, signal) => {
