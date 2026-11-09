@@ -21,3 +21,5 @@ export const useCartStore = create((set) => ({
         )
       };
     }
+    return { items: [...state.items, { id: product.id, title: product.title, price: product.price, quantity: 1 }] };
+  }),
