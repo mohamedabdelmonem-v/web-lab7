@@ -9,3 +9,11 @@ const Layout = ({ theme, toggleTheme }) => {
             <main style={{ padding: '20px' }}>
         <Outlet />
       </main>
+      <footer style={{ marginTop: 'auto', textAlign: 'center', padding: '10px', borderTop: '1px solid #ccc' }}>
+        Online Shop © 2026
+      </footer>
+    </div>
+  );
+};
+
+export default Layout;
