@@ -14,3 +14,6 @@ export const fetchProduct = async (id, signal) => {
     if (!response.ok) {
     throw new Error(`Product with ID ${id} not found.`);
   }
+  const data = await response.json();
+  return data;
+};
