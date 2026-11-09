@@ -9,3 +9,7 @@ function fetchReducer(state, action) {
       return { ...state, loading: false, data: action.payload, error: null };
     case 'FETCH_ERROR':
       return { ...state, loading: false, error: action.payload };
+      default:
+      return state;
+  }
+}
