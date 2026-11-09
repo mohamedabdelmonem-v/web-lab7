@@ -5,3 +5,4 @@ export const login = (username, password) => {
         setTimeout(() => {
             // Demo account check (Accepts any email or standard demo credentials)
       if (password === 'demo123456' && username.length > 0) {
+        resolve({ username });
