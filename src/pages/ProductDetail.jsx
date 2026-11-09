@@ -20,7 +20,7 @@ const ProductDetail = () => {
 
   return (
     <div>
+<button onClick={() => navigate('/products')}>← Back to Products</button>
 
 
-        
     </div>
