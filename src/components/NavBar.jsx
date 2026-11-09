@@ -13,3 +13,6 @@ const NavBar = ({ theme, toggleTheme }) => {
 
   return (
     <nav style={{ display: 'flex', gap: '15px', padding: '15px', borderBottom: '1px solid #ccc', alignItems: 'center' }}></nav>
+    <NavLink to="/" end className={({ isActive }) => (isActive ? 'active-link' : '')}>Home</NavLink>
+      <NavLink to="/products" className={({ isActive }) => (isActive ? 'active-link' : '')}>Products</NavLink>
+      <NavLink to="/cart" className={({ isActive }) => (isActive ? 'active-link' : '')}>Cart ({totalCount})</NavLink>
