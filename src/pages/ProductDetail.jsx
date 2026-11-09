@@ -8,3 +8,9 @@ const ProductDetail = () => {
   const { id } = useParams(); // URL string parameter
   const navigate = useNavigate();
   const addItem = useCartStore((state) => state.addItem);
+
+  // Convert string id to number for custom fetch call dependency
+  const { data: product, loading, error } = useFetch(
+    (signal) => fetchProduct(id, signal),
+    [id]
+  );
