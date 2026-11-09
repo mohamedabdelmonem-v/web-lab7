@@ -9,3 +9,6 @@ export const login = (username, password) => {
         } else {
         reject(new Error('Invalid credentials. Password must be demo123456'));
       }
+      }, 500);
+  });
+};
