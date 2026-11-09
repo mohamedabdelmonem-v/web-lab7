@@ -40,3 +40,9 @@ const ProductList = () => {
     }
     setSearchParams(newParams);
   };
+
+  if (loading) return <p>Loading catalogue...</p>;
+  if (error) return <p style={{ color: 'red' }}>Error: {error}</p>;
+
+  return (
+    <div></div>
