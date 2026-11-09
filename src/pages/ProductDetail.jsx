@@ -1,0 +1,5 @@
+import React from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useFetch } from '../hooks/useFetch';
+import { fetchProduct } from '../api/productsApi';
+import { useCartStore } from '../store/cartStore';
