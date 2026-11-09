@@ -9,3 +9,14 @@ export function useLocalStorage(key, initialValue) {
       return initialValue;
     }
   });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+    } catch (e) {
+      console.error('Failed to save to localStorage', e);
+    }
+  }, [key, value]);
+
+  return [value, setValue];
+}
