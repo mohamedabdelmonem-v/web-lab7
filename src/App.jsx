@@ -39,3 +39,14 @@ function App() {
                 </ProtectedRoute>
               } 
             />
+
+            <Route path="login" element={<Login />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
+  );
+}
+
+export default App;
