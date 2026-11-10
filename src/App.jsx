@@ -19,3 +19,14 @@ function App() {
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
   };
+
+  return (
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout theme={theme} toggleTheme={toggleTheme} />}>
+            <Route index element={<Home />} />
+            
+            {/* Nested routes under /products */}
+            <Route path="products" element={<ProductList />} />
+            <Route path="products/:id" element={<ProductDetail />} />
